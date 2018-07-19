@@ -2,7 +2,7 @@
 // 导入 VUe 框架
 import Vue from 'vue';
 // 导入 app.vue 组件
-import App from './app.vue';
+import App from './componnets/app.vue';
 
 // 创建 Vue 根实例
 new Vue({
