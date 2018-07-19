@@ -1,3 +1,5 @@
+var path = require('path');
+
 var config = {
     entry: {
         main: './main'  // main.js
