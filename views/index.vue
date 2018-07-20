@@ -7,7 +7,11 @@
             <button @click="handleClick('decrease')">-{{ decrease_step }}</button>
         </div>
 
-        <div> {{ list }}</div>
+        <div>
+            <div>{{ list }}</div>
+            <div>{{ listCount }}</div>
+            <button @click="handleActionIncrement">action + 1</button>
+        </div>
 
 
         <router-link to="/about" tag="div" active-class>关于我们</router-link>
@@ -28,6 +32,9 @@
             },
             list: function () {
                 return this.$store.getters.filteredList;
+            },
+            listCount: function () {
+                return this.$store.getters.listCount;
             }
         },
         methods: {
@@ -44,6 +51,9 @@
                         count: _this.decrease_step
                     });
                 }
+            },
+            handleActionIncrement () {
+                this.$store.dispatch('increment');
             }
         }
     }

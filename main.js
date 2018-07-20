@@ -58,6 +58,18 @@ const store = new Vuex.Store({
     getters: {
         filteredList: state => {
             return state.list.filter(item => item < 10);
+        },
+        listCount: (state, getters) => {
+            return getters.filteredList.length;
+        }
+    },
+    // 操作 mutations ，异步操作
+    actions: {
+        increment (context) {
+            context.commit({
+                type: 'increment',
+                count: 1
+            });
         }
     }
 });
