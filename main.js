@@ -2,6 +2,8 @@
 import Vue from 'vue';
 // 导入 vue-router 组件
 import VueRouter from 'vue-router';
+// 导入 vuex 组件
+import Vuex from 'vuex';
 // 导入 app.vue 组件
 import App from './app.vue';
 // 导入 vue-router 路由配置文件
@@ -10,7 +12,10 @@ import Routers from './src/routers/router';
 
 
 Vue.use(VueRouter);
+Vue.use(Vuex);
 
+
+/** vue-router **/
 const router = new VueRouter({
     // 使用 html5 的 History 路由模式
     mode: 'history',
@@ -32,11 +37,27 @@ router.afterEach((to, from, next) => {
     window.scrollTo(0, 0);  // 滚动条返回顶部
 });
 
+
+/** vuex **/
+const store = new Vuex.Store({
+    state: {
+        count: 0
+    },
+    mutations: {
+        increment (state, n = 1) {
+            state.count += n;
+        },
+        decrease (state, n = 1) {
+            state.count -= n;
+        }
+    }
+});
+
+
 // 创建 Vue 根实例
 new Vue({
     el: '#app',
     router: router,
+    store: store,
     render: h => h(App)
 });
-
-//document.getElementById('app').innerHTML = 'Hello webpack!';
