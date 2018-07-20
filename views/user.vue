@@ -5,7 +5,7 @@
 <script>
     export default {
         mounted () {
-            console.log(this.$router.params.id)
+            console.log(this.$route.params.id)
         }
     }
 </script>
