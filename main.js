@@ -44,11 +44,11 @@ const store = new Vuex.Store({
         count: 0
     },
     mutations: {
-        increment (state, n = 1) {
-            state.count += n;
+        increment (state, params) {
+            state.count += params.count;
         },
-        decrease (state, n = 1) {
-            state.count -= n;
+        decrease (state, params) {
+            state.count -= params.count;
         }
     }
 });

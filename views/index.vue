@@ -3,8 +3,8 @@
         <h1>首页</h1>
         <div>
             <div>Vuex计数器：{{ count }}</div>
-            <button @click="handleIncrement">+{{ increment_step }}</button>
-            <button @click="handleDecrease">-{{ decrease_step }}</button>
+            <button @click="handleClick('increment')">+{{ increment_step }}</button>
+            <button @click="handleClick('decrease')">-{{ decrease_step }}</button>
         </div>
 
 
@@ -26,11 +26,19 @@
             }
         },
         methods: {
-            handleIncrement () {
-                this.$store.commit('increment', this.increment_step);
-            },
-            handleDecrease () {
-                this.$store.commit('decrease', this.decrease_step);
+            handleClick (type) {
+                var _this = this;
+                if (type === 'increment') {
+                    this.$store.commit({
+                        type: 'increment',
+                        count: _this.increment_step
+                    });
+                } else if (type === 'decrease') {
+                    this.$store.commit({
+                        type: 'decrease',
+                        count: _this.decrease_step
+                    });
+                }
             }
         }
     }
