@@ -20,6 +20,12 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     window.document.title = to.meta.title;
     next();
+
+    /*if (window.localStorage.token) {
+        next();
+    } else {
+        next('/login');
+    }*/
 });
 // afterEach
 router.afterEach((to, from, next) => {
