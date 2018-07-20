@@ -1,10 +1,12 @@
 <template>
-    $END$
+    <div>{{ $route.params.id }}</div>
 </template>
 
 <script>
     export default {
-        name: "user"
+        mounted () {
+            console.log(this.$router.params.id)
+        }
     }
 </script>
 
