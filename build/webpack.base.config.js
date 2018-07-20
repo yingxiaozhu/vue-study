@@ -8,9 +8,10 @@ var config = {
     },
     // 出口
     output: {
-        path: path.join(__dirname, './dist'),
+        path: path.join(__dirname, '../dist'),
         publicPath: '/dist/',
-        filename: 'main.js'
+        filename: '[name].js',
+        chunkFilename: '[name].chunk.js'
     },
     // 加载器
     module: {
@@ -47,7 +48,10 @@ var config = {
     },
     // 插件
     plugins: [
-        new ExtractTextPlugin('main.css'),
+        new ExtractTextPlugin({
+            filename: '[name].css',
+            allChunks: true
+        }),
     ]
 };
 

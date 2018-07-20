@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack-dev-server --watch --config webpack.dev.config.js",
-    "dev": "webpack-dev-server --open  --config webpack.dev.config.js",
-    "build": "webpack --progress --hide-modules --config webpack.prod.config.js"
+    "watch": "webpack-dev-server --watch --history-api-fallback --config ./build/webpack.dev.config.js",
+    "dev": "webpack-dev-server --open --history-api-fallback --config ./build/webpack.dev.config.js",
+    "build": "webpack --progress --hide-modules --config ./build/webpack.prod.config.js"
   },
   "author": "aurora",
   "license": "ISC",
@@ -33,6 +33,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
   }
 }
