@@ -65,10 +65,15 @@ const store = new Vuex.Store({
     },
     // 操作 mutations ，异步操作
     actions: {
-        increment (context) {
-            context.commit({
-                type: 'increment',
-                count: 1
+        asyncIncrement (context) {
+            return new Promise(resolve => {
+               setTimeout(() => {
+                   context.commit({
+                       type: 'increment',
+                       count: 1
+                   });
+                    resolve();
+               }, 1000)
             });
         }
     }
