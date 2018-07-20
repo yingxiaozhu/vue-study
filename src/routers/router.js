@@ -3,6 +3,10 @@
  **************************/
 const Routers = [
     {
+        path: '/login',
+        component: (resolve) => require(['../../views/login.vue'], resolve)
+    },
+    {
         path: '/index',
         component: (resolve) => require(['../../views/index.vue'], resolve)
     },
