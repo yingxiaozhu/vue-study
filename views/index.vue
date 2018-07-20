@@ -7,6 +7,8 @@
             <button @click="handleClick('decrease')">-{{ decrease_step }}</button>
         </div>
 
+        <div> {{ list }}</div>
+
 
         <router-link to="/about" tag="div" active-class>关于我们</router-link>
     </div>
@@ -23,6 +25,9 @@
         computed: {
             count: function () {
                 return this.$store.state.count;
+            },
+            list: function () {
+                return this.$store.getters.filteredList;
             }
         },
         methods: {

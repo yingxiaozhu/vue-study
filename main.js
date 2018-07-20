@@ -40,15 +40,24 @@ router.afterEach((to, from, next) => {
 
 /** vuex **/
 const store = new Vuex.Store({
+    // 定义全局变量
     state: {
-        count: 0
+        count: 0,
+        list: [1, 5, 8, 10, 30, 50]
     },
+    // 处理全局变量
     mutations: {
         increment (state, params) {
             state.count += params.count;
         },
         decrease (state, params) {
             state.count -= params.count;
+        }
+    },
+    // 全局修改
+    getters: {
+        filteredList: state => {
+            return state.list.filter(item => item < 10);
         }
     }
 });
