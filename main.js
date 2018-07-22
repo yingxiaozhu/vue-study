@@ -14,10 +14,6 @@ import store from './src/vuex/vuex';
 
 
 
-//Vue.use(VueRouter);
-//Vue.use(Vuex);
-
-
 // 创建 Vue 根实例
 new Vue({
     el: '#app',
