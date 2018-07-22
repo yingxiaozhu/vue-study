@@ -15,15 +15,26 @@
 
 
         <router-link to="/about" tag="div" active-class>关于我们</router-link>
+
+        <div>
+            随机增加：
+            <Counter :number="number"></Counter>
+        </div>
     </div>
 </template>
 
 <script>
+    import Counter from './counter.vue';
+
     export default {
+        components: {
+            Counter
+        },
         data() {
             return {
                 increment_step: 5,
                 decrease_step: 3,
+                number: 0,
             }
         },
         computed: {
@@ -56,7 +67,16 @@
                 this.$store.dispatch('asyncIncrement').then(() => {
                     console.log(this.$store.state.a.count);
                 });
+            },
+            handleAddRandom (num) {
+                this.number += num;
             }
+        },
+        created () {
+            this.$bus.on('add', this.handleAddRandom);
+        },
+        beforeDestroy () {
+            this.$bus.off('add', this.handleAddRandom);
         }
     }
 </script>
