@@ -14,6 +14,10 @@ const apiServer = http.createServer((req, res) => {
     };
 
     function callback(error, response, body) {
+        console.log(
+            'error' + error,
+            'body' + body,
+            'response: ' + response, url);
         if (!error && response.statusCode === 200) {
             // 设置编码类型，否则中文显示会乱码
             res.setHeader('Content-Type', 'text/plain;charset=UTF-8');

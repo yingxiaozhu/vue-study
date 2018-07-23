@@ -24,6 +24,10 @@ const Routers = [
         path: '/user/:id',
         component: (resolve) => require(['../../views/user.vue'], resolve)
     },
+    {
+      path: '/zhihu',
+      component: (resolve) => require(['../../demo/zhihu.vue'], resolve)
+    },
     // 404
     {
         path: '*',
