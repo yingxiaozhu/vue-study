@@ -29,6 +29,9 @@ const moduleA = {
         },
         listCount: (state, getters) => {
             return getters.filteredList.length;
+        },
+        sumCount (state, getters, rootState) {
+            return state.count + rootState.count;
         }
     },
     // 操作 mutations ，异步操作

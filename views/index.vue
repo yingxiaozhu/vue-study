@@ -8,8 +8,9 @@
         </div>
 
         <div>
-            <div>{{ list }}</div>
-            <div>{{ listCount }}</div>
+            <div>list: {{ list }}</div>
+            <div>listCount: {{ listCount }}</div>
+            <div>sumCount: {{ sumCount }}</div>
             <button @click="handleAsyncIncrement">async + 1</button>
         </div>
 
@@ -46,6 +47,9 @@
             },
             listCount: function () {
                 return this.$store.getters.listCount;
+            },
+            sumCount: function () {
+                return this.$store.getters.sumCount;
             }
         },
         methods: {
