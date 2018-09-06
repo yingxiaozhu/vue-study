@@ -11,21 +11,76 @@
                 <div class="layout-nav">
                     <MenuItem name="1">
                         社区
+
                     </MenuItem>
                     <MenuItem name="2">
-                        分类
+
+                        <Dropdown>
+                            <a href="javascript:void(0)">
+                                分类
+                                <Icon type="ios-arrow-down"></Icon>
+                            </a>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>驴打滚</DropdownItem>
+                                <DropdownItem>炸酱面</DropdownItem>
+                                <DropdownItem disabled>豆汁儿</DropdownItem>
+                                <DropdownItem>冰糖葫芦</DropdownItem>
+                                <DropdownItem divided>北京烤鸭</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                     </MenuItem>
                     <MenuItem name="3">
-                        教程
+                        <Dropdown>
+                            <a href="javascript:void(0)">
+                                教程
+                                <Icon type="ios-arrow-down"></Icon>
+                            </a>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>驴打滚</DropdownItem>
+                                <DropdownItem>炸酱面</DropdownItem>
+                                <DropdownItem disabled>豆汁儿</DropdownItem>
+                                <DropdownItem>冰糖葫芦</DropdownItem>
+                                <DropdownItem divided>北京烤鸭</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                     </MenuItem>
                     <MenuItem name="4">
-                        文档
+                        <Dropdown>
+                            <a href="javascript:void(0)">
+                                文档
+                                <Icon type="ios-arrow-down"></Icon>
+                            </a>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>驴打滚</DropdownItem>
+                                <DropdownItem>炸酱面</DropdownItem>
+                                <DropdownItem disabled>豆汁儿</DropdownItem>
+                                <DropdownItem>冰糖葫芦</DropdownItem>
+                                <DropdownItem divided>北京烤鸭</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                     </MenuItem>
                     <MenuItem name="4">
-                        开源
+
+                        <Dropdown>
+                            <a href="javascript:void(0)">
+                                开源
+                                <Icon type="ios-arrow-down"></Icon>
+                            </a>
+                            <DropdownMenu slot="list">
+                                <DropdownItem>驴打滚</DropdownItem>
+                                <DropdownItem>炸酱面</DropdownItem>
+                                <DropdownItem disabled>豆汁儿</DropdownItem>
+                                <DropdownItem>冰糖葫芦</DropdownItem>
+                                <DropdownItem divided>北京烤鸭</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                     </MenuItem>
                 </div>
-                <Button shape="circle" icon="ios-search">Search</Button>
+                <Button shape="circle" icon="ios-search" class="search">Search</Button>
+
+                <Button class="btn-login">登录</Button>
+                <Button class="btn-register">注册</Button>
+
             </Menu>
 
         </Header>
@@ -35,47 +90,6 @@
         </Content>
         <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
     </div>
-
-
-  <!--  <div>
-       &lt;!&ndash;<router-view></router-view>&ndash;&gt;
-　　　 <Menu mode="horizontal" :theme="theme1" active-key="1">
-        <Menu-item key="1">
-            <Icon type="ios-paper"></Icon>
-            内容管理
-        </Menu-item>
-        <Menu-item key="2">
-            <Icon type="ios-people"></Icon>
-            用户管理
-        </Menu-item>
-        <Submenu key="3"　open-names="">
-            <template slot="title">
-                <Icon type="stats-bars"></Icon>
-                统计分析
-            </template>
-            <Menu-group title="使用">
-                <Menu-item key="3-1">新增和启动</Menu-item>
-                <Menu-item key="3-2">活跃分析</Menu-item>
-                <Menu-item key="3-3">时段分析</Menu-item>
-            </Menu-group>
-            <Menu-group title="留存">
-                <Menu-item key="3-4">用户留存</Menu-item>
-                <Menu-item key="3-5">流失用户</Menu-item>
-            </Menu-group>
-        </Submenu>
-        <Menu-item key="4">
-            <Icon type="settings"></Icon>
-            综合设置
-        </Menu-item>
-    </Menu>
-        <br>
-        <p>切换主题</p>
-        <Radio-group :model.sync="theme1">
-            <Radio value="light"></Radio>
-            <Radio value="dark"></Radio>
-            <Radio value="primary"></Radio>
-        </Radio-group>
-    </div>-->
 </template>
 <style scoped>
     .layout{
@@ -93,16 +107,38 @@
         float: left;
         position: relative;
         top: 12px;
-        left: 559px;
+        left: 263px;
 
     }
     .layout-nav{
         width: 420px;
         margin: 0 auto;
+        margin-left: 382px;
     }
     .layout-footer-center{
         text-align: center;
     }
+    .search{
+        width: 223px;
+        height: 37px;
+        margin-left: 16px;
+    }
+
+    .btn-login{
+        width:93px;
+        height:36px;
+        margin-left: 196px;
+    }
+    .btn-register{
+        width:93px;
+        height:36px;
+        margin-left: 45px;
+    }
+
+
+
+
+
 
 </style>
 <script>
