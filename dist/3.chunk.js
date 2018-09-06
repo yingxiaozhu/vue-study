@@ -1,13 +1,13 @@
-webpackJsonp([2],{
+webpackJsonp([3],{
 
-/***/ 114:
+/***/ 101:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 115:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,49 +17,59 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = {
-    mounted: function mounted() {
-        console.log(this.$route.params.id);
+    methods: {
+        login: function login() {
+            window.localStorage.setItem('token', 'login-test');
+            console.log(window.localStorage.getItem('token'));
+        }
     }
 };
 
 /***/ }),
 
-/***/ 116:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._v(_vm._s(_vm.$route.params.id))])
+  return _c('div', [_c('h1', [_c('a', {
+    attrs: {
+      "href": "javascript:;"
+    },
+    on: {
+      "click": _vm.login
+    }
+  }, [_vm._v("登录")])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-14440036", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-4dcb66bf", module.exports)
   }
 }
 
 /***/ }),
 
-/***/ 91:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 
 /* styles */
-__webpack_require__(114)
+__webpack_require__(101)
 
 var Component = __webpack_require__(39)(
   /* script */
-  __webpack_require__(115),
+  __webpack_require__(102),
   /* template */
-  __webpack_require__(116),
+  __webpack_require__(103),
   /* scopeId */
-  "data-v-14440036",
+  "data-v-4dcb66bf",
   /* cssModules */
   null
 )
-Component.options.__file = "/home/yjchen/Documents/study/vue-learn/webpack-learn/views/user.vue"
+Component.options.__file = "/home/yjchen/Documents/study/vue-learn/webpack-learn/views/login.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] user.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] login.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -68,9 +78,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-14440036", Component.options)
+    hotAPI.createRecord("data-v-4dcb66bf", Component.options)
   } else {
-    hotAPI.reload("data-v-14440036", Component.options)
+    hotAPI.reload("data-v-4dcb66bf", Component.options)
   }
 })()}
 

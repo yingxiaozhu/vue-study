@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack-dev-server --watch --history-api-fallback --config ./build/webpack.dev.config.js",
     "dev": "webpack-dev-server --open --history-api-fallback --config ./build/webpack.dev.config.js",
-    "build": "webpack --progress --hide-modules --config ./build/webpack.prod.config.js"
+    "build": "webpack --progress --hide-modules --config ./build/webpack.dev.config.js"
   },
   "author": "aurora",
   "license": "ISC",
@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "iview": "^3.0.1",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
