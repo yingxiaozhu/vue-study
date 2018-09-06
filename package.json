@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --open --history-api-fallback --config ./build/webpack.dev.config.js",
     "build": "webpack --progress --hide-modules --config ./build/webpack.dev.config.js"
   },
-  "author": "aurora",
+  "author": "alisa",
   "license": "ISC",
   "devDependencies": {
     "babel": "^6.23.0",
