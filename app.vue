@@ -11,10 +11,8 @@
                 <div class="layout-nav">
                     <MenuItem name="1">
                         社区
-
                     </MenuItem>
                     <MenuItem name="2">
-
                         <Dropdown>
                             <a href="javascript:void(0)">
                                 分类
@@ -77,17 +75,18 @@
                     </MenuItem>
                 </div>
                 <Button shape="circle" icon="ios-search" class="search">Search</Button>
-
-                <Button class="btn-login">登录</Button>
-                <Button class="btn-register">注册</Button>
+                <Button class="btn-login"　@click="login">登录</Button>
+                <Button class="btn-register" @click="register">注册</Button>
 
             </Menu>
 
         </Header>
         <Content>
-            　
+            <router-view>
 
-        </Content>
+            </router-view>
+            　
+　      </Content>
         <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
     </div>
 </template>
@@ -135,15 +134,22 @@
         margin-left: 45px;
     }
 
-
-
-
-
-
 </style>
 <script>
     export default {
 
+        methods: {
+            login () {
+                console.log("methods");
+                this.$router.push('/login');
+            },
+            register () {
+                console.log("methods");
+                this.$router.push('/login');
+            },
+
+        }
     }
+
 </script>
 
