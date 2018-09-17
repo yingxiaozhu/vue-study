@@ -17,8 +17,8 @@ const Routers = [
         component: (resolve) => require(['../../views/index.vue'], resolve)
     },
     {
-        path: '/about',
-        component: (resolve) => require(['../../views/about.vue'], resolve)
+        path: '/modify',
+        component: (resolve) => require(['../../views/modifyPassword.vue'], resolve)
     },
     {
         path: '/user/:id',
