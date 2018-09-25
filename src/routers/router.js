@@ -36,6 +36,11 @@ const Routers = [
 ];
 
 
+// 页面刷新时，重新赋值token
+if (sessionStorage.getItem('token')) {
+    store.commit('set_token', sessionStorage.getItem('token'))
+}
+
 const router = new VueRouter({
     // 使用 html5 的 History 路由模式
     mode: 'history',
@@ -43,19 +48,38 @@ const router = new VueRouter({
 });
 // beforeEach
 router.beforeEach((to, from, next) => {
-    window.document.title = to.meta.title;
-    next();
+    if (to.matched.some(r => r.meta.requireAuth)) {           //这里的requireAuth为路由中定义的 meta:{requireAuth:true}，意思为：该路由添加该字段，表示进入该路由需要登陆的
+        if (store.state.token) {
+            next();
+        }
+        else {
+            next({
+                path: '/login',
+                query: {redirect: to.fullPath}
+            })
+        }
+    }
+    else {
+        next();
+    }
+});
+  /*  window.document.title = to.meta.title;
+    next();*/
 
     /*if (window.localStorage.token) {
         next();
     } else {
         next('/login');
     }*/
-});
+/*});*/
 // afterEach
 router.afterEach((to, from, next) => {
     window.scrollTo(0, 0);  // 滚动条返回顶部
 });
+
+
+
+
 
 Vue.use(VueRouter);
 

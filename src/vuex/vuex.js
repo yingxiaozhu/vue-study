@@ -54,8 +54,18 @@ Vue.use(Vuex);
 
 /** vuex **/
 const store = new Vuex.Store({
-    modules: {
-        a: moduleA,
+    state:{
+        token:''
+    },
+    mutations:{
+        set_token(state, token) {
+            state.token = token
+            sessionStorage.token = token
+        },
+        del_token(state) {
+            state.token = ''
+            sessionStorage.removeItem('token')
+        }
     }
 });
 

@@ -1,31 +1,34 @@
 <template>
-    <div class="form">
-        <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
-            <FormItem prop="user">
-                <Input type="text" v-model="formInline.user" placeholder="Username">
-                <Icon type="ios-person-outline" slot="prepend"></Icon>
-                </Input>
-            </FormItem><br>
-            <FormItem prop="password">
-                <Input type="password" v-model="formInline.password" placeholder="Password">
-                <Icon type="ios-lock-outline" slot="prepend"></Icon>
-                </Input>
-            </FormItem><br>
-            <div class="forgot"><router-link to="/modify">忘记密码?</router-link></div>
-            <FormItem>
-                <Button type="success" long　@click="handleSubmit('formInline')">登录</Button>
-            </FormItem><br>
-            <FormItem>
-                <Button long>
-                    <Icon type="logo-octocat" />
-                    <a href="https://laravel-china.org/auth/oauth?driver=github">GitHub 登录</a>
-                </Button>
-                <Button long>
-                    <Icon type="ios-text-outline" />
-                    <a href="https://laravel-china.org/auth/oauth?driver=wechat">使用微信登录</a>
-                </Button>
-            </FormItem>
-        </Form>
+    <div class="panel">
+            <div class="form">
+                <h3>请登录</h3>
+                <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
+                    <FormItem prop="user">
+                        <Input type="text" v-model="formInline.user" placeholder="Username">
+                        <Icon type="ios-person-outline" slot="prepend"></Icon>
+                        </Input>
+                    </FormItem><br>
+                    <FormItem prop="password">
+                        <Input type="password" v-model="formInline.password" placeholder="Password">
+                        <Icon type="ios-lock-outline" slot="prepend"></Icon>
+                        </Input>
+                    </FormItem><br>
+                    <div class="forgot"><router-link to="/modify">忘记密码?</router-link></div>
+                    <FormItem>
+                        <Button type="success" long　@click="handleSubmit('formInline')">登录</Button>
+                    </FormItem><br>
+                    <FormItem>
+                        <Button long>
+                            <Icon type="logo-octocat" />
+                            <a href="https://laravel-china.org/auth/oauth?driver=github">GitHub 登录</a>
+                        </Button>
+                        <Button long>
+                            <Icon type="ios-text-outline" />
+                            <a href="https://laravel-china.org/auth/oauth?driver=wechat">使用微信登录</a>
+                        </Button>
+                    </FormItem>
+                </Form>
+            </div>
     </div>
 </template>
 <script>
@@ -72,4 +75,13 @@
         margin-bottom: 10px;
         margin-left: 120px;
     }
-    </style>
+    .panel{
+        background-color: #ffffff;
+        background-size:80px 60px;
+    }
+    h3{
+        color:#999;
+        margin-right: 163px;
+        border:0px  gray;
+    }
+</style>
